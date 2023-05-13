@@ -1,5 +1,5 @@
 # TODO:
-+
+
 - HOME PAGE
 - VIDEOS
 - RECORD MY VIDEO

@@ -5,6 +5,8 @@ import '../styles/global.css';
 import '../styles/baseLayout.css';
 import Footer from '../components/Footer.astro';
 
+const {pageTitle} = Astro.props
+
 const tasks = [
 		{
 			title: 'فرش الفروع الجديدة',
@@ -113,7 +115,7 @@ const tasks = [
 			href='https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap'
 			rel='stylesheet'
 		/>
-		<title>Replenishment</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<div class='grid gap-4 layout-container'>

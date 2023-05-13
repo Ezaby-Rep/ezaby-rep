@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
 import TaskLink from '../../components/TaskLink.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
-  const tasks = [
+	const tasks = [
 		{
 			title: 'فرش الفروع الجديدة',
 			url: '/tasks/فرش الفروع الجديدة',
@@ -91,25 +91,27 @@ export async function getStaticPaths() {
 			sapReports: ['ZSTOCK', 'ZSTO5'],
 		},
 	];
-  const uniqueReports = [...new Set (tasks.map(task => task.sapReports).flat())]
-  return uniqueReports.map(report => {
-    const filteredTasks = tasks.filter((task) => task.sapReports.includes(report));
-    return {params: {report}, props: {tasks: filteredTasks}}
-  })
+	const uniqueFrequencies = [
+		...new Set(tasks.map(task => task.frequency).flat()),
+	];
+	return uniqueFrequencies.map(frequency => {
+		const filteredTasks = tasks.filter(task => task.frequency == frequency);
+		return { params: { frequency }, props: { tasks: filteredTasks } };
+	});
 }
 
-const { report } = Astro.params;
+const { frequency } = Astro.params;
 const { tasks } = Astro.props;
 ---
 
-<BaseLayout pageTitle={`Replenishment | ${report}`}>
-	<div class="page-title">
-		<h1 class="arab-txt text-3xl" dir="rtl">{report}</h1>
-		<p class="mt-2 arab-txt text-gray-700" dir="rtl">مهام يشارك التقرير فى تنفيذها:</p>
+<BaseLayout pageTitle={`Replenishment | ${frequency}`}>
+	<div class='page-title'>
+		<h1 class='arab-txt text-3xl' dir='rtl'>{frequency}</h1>
+		<p class="mt-2 arab-txt text-gray-700" dir="rtl">مهام تنفذ بتكرار {frequency} :</p>
 	</div>
-	<main class="">
-		<ul class="flex flex-col gap-10 items-end mt-4 mr-4">
-			{tasks.map((task) => <TaskLink title={task.title} url={task.url}   />)}
+	<main class=''>
+		<ul class='flex flex-col gap-10 items-end mt-4 mr-4'>
+			{tasks.map(task => <TaskLink title={task.title} url={task.url} />)}
 		</ul>
 	</main>
 </BaseLayout>

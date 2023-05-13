@@ -107,7 +107,7 @@ const { task } = Astro.params;
 const { url, frequency, reports} = Astro.props;
 ---
 
-<BaseLayout pageTitle={task}>
+<BaseLayout pageTitle={`Replenishment | ${task}`}>
   <h1 class="page-title arab-txt text-3xl" dir="rtl">{task}</h1>
   <Main url={url} frequency={frequency} reports={reports} videoSrc={'https://www.youtube.com/embed/eqFR5kFKdOs'} />
 </BaseLayout>
