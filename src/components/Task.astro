@@ -1,0 +1,7 @@
+---
+const {task} = Astro.props
+---
+
+<li class="py-3 px-2 flex justify-end">
+  <a href={task.url} class="arab-txt text-gray-800 hover:text-blue-600 text-right" dir="rtl">{task.title}</a>
+</li>

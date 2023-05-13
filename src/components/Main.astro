@@ -1,0 +1,19 @@
+---
+import ReportTag from "./ReportTag.astro";
+import FrequencyTag from './FrequencyTag.astro'
+import Video from "./Video.astro";
+const {videoSrc} = Astro.props;
+
+const {url, frequency, reports} = Astro.props
+---
+<main class="flex flex-col items-start pl-4">
+  <Video videoSrc={videoSrc} />
+  <div class="flex justify-between w-full my-4">
+    <ul class="flex">
+      {
+        reports.map(report => <ReportTag report={report} />)
+      }
+    </ul>
+    <FrequencyTag frequency={frequency} /> 
+  </div>
+</main>

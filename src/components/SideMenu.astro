@@ -1,0 +1,15 @@
+---
+const {tasks} = Astro.props
+import Task from "./Task.astro";
+
+---
+
+<aside class="border-solid border-l-2 border-gray-200 px-10 text-xl">
+	<ul class="">
+		{
+			tasks.map(task => (
+				<Task task={task} />
+			))
+		}
+	</ul>
+</aside>

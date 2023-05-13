@@ -1,0 +1,9 @@
+---
+const navLinks = [{title: "الرئيسية", url: "/"}, {title: "تواصل معنا", url: "/contact"}];
+---
+<nav>
+  {
+    navLinks.map(link => <a href={link.url} class="arab-txt px-3 font-bold italic">{link.title}</a>)
+  }
+</nav>
+

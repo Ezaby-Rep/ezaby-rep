@@ -1,0 +1,26 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  grid-area: hd;
+}
+main {
+  grid-area: mn;
+}
+aside {
+  grid-area: sd;
+}
+
+.arab-txt {
+  font-family: 'Cairo', sans-serif;
+}
+
+.page-title {
+  grid-area: tl;
+}
+
+footer {
+  padding: 18px;
+  grid-area: ft;
+}

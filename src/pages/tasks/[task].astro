@@ -1,0 +1,113 @@
+---
+import Main from "../../components/Main.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+export async function getStaticPaths() {
+	const tasks = [
+		{
+			title: 'فرش الفروع الجديدة',
+			url: '/tasks/فرش الفروع الجديدة',
+			frequency: 'شهرى',
+			sapReports: ['ZSTO5_FM', 'ZOVR_FM', 'ZTOCK_HANA', 'Z_ALLOC'],
+		},
+		{
+			title: 'مخزن طنطا',
+			url: '/tasks/مخزن طنطا',
+			frequency: 'يومى',
+			sapReports: ['MB52', 'ZPR_SYSTEM', 'ZPRG_PR'],
+		},
+		{
+			title: 'الموارد البشرية',
+			url: '/tasks/الموارد البشرية',
+			frequency: 'يومى',
+			sapReports: [],
+		},
+		{
+			title: 'متابعة و تعديل البراند',
+			url: '/tasks/متابعة و تعديل البراند',
+			frequency: 'يومى',
+			sapReports: ['ZREP_BRAND'],
+		},
+		{
+			title: 'تقرير المخزون',
+			url: '/tasks/تقرير المخزون',
+			frequency: 'أسبوعى',
+			sapReports: ['ZSTOCK_P'],
+		},
+		{
+			title: 'عمل ال MRP',
+			url: '/tasks/عمل ال MRP',
+			frequency: 'يومى',
+			sapReports: [
+				'ZCAT6 MODIFY',
+				'ZPRG',
+				'ZSITE SHARE',
+				' ZEZ9_BI',
+				'ZTOCK_HANA',
+				'ZCAT6',
+				'ZCAT6_UPLOAD',
+			],
+		},
+		{
+			title: 'رفع المعدلات',
+			url: '/tasks/رفع المعدلات',
+			frequency: 'شهرى',
+			sapReports: ['ZCAT6 MODIFY'],
+		},
+		{
+			title: 'تحويلات الأدوية - تجميل - ترانزيت',
+			url: '/tasks/تحويلات الأدوية - تجميل - ترانزيت',
+			frequency: 'أسبوعى',
+			sapReports: ['ZTOCK_HANA', 'ZPRG', 'Z_ALLOC'],
+		},
+		{
+			title: 'تقرير البيع',
+			url: '/tasks/تقرير البيع',
+			frequency: 'أسبوعى',
+			sapReports: ['ZEZ6_S4'],
+		},
+		{
+			title: 'طلبية البوث',
+			url: '/tasks/طلبية البوث',
+			frequency: 'أسبوعى',
+			sapReports: ['ZSTO5'],
+		},
+		{
+			title: 'الباكت',
+			url: '/tasks/الباكت',
+			frequency: 'أسبوعى',
+			sapReports: ['MB52', 'ZFOR'],
+		},
+		{
+			title: 'تقرير التحويلات',
+			url: '/tasks/تقرير التحويلات',
+			frequency: 'أسبوعى',
+			sapReports: ['ZEZ9H_BI'],
+		},
+		{
+			title: 'قريب الانتهاء',
+			url: '/tasks/قريب الانتهاء',
+			frequency: 'شهرى',
+			sapReports: ['ZSTOCK', 'ZSTO5'],
+		},
+	];
+	return tasks.map(oneTask => {
+		const task = oneTask.title;
+		return {
+			params: { task },
+			props: {
+				url: oneTask.url,
+				frequency: oneTask.frequency,
+				reports: oneTask.sapReports,
+			},
+		};
+	});
+}
+
+const { task } = Astro.params;
+const { url, frequency, reports} = Astro.props;
+---
+
+<BaseLayout pageTitle={task}>
+  <h1 class="page-title arab-txt text-3xl" dir="rtl">{task}</h1>
+  <Main url={url} frequency={frequency} reports={reports} videoSrc={'https://www.youtube.com/embed/eqFR5kFKdOs'} />
+</BaseLayout>
