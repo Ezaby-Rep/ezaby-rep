@@ -63,49 +63,41 @@ footer {
 }
 
 .remove-txt {
-	visibility: hidden;
+	display: none;
 }
 
 @-webkit-keyframes drawer {
 	from {
 		width: 0;
-		color: transparent;
 	}
 	to {
 		width: 100%;
-		color: #fff;
 	}
 }
 @keyframes drawer {
 	from {
 		width: 0;
-		color: transparent;
 	}
 	to {
 		width: 100%;
-		color: #fff;
 	}
 }
 @-webkit-keyframes close {
 	from {
 		width: 100%;
-		color: #fff;
 	}
 
 	to {
-		width: 0;
-		color: transparent;
+		width: 0;		color: transparent;
 	}
 }
 @keyframes close {
 	from {
 		width: 100%;
-		color: #fff;
 	}
 
 	to {
 		width: 0;
-		color: transparent;
 	}
 }
 
