@@ -18,7 +18,7 @@ header {
 }
 main {
 	grid-area: mn;
-	@apply flex flex-col items-start px-4 lg:pr-0;
+	@apply flex flex-col items-end px-4 lg:pr-0 md:pl-20 min-h-[calc(100vh-344px)];
 }
 aside {
 	grid-area: sd;
@@ -44,7 +44,6 @@ aside {
 
 .page-title {
 	grid-area: tl;
-	@apply px-4 lg:pr-0;
 }
 
 footer {

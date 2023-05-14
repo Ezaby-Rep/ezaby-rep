@@ -108,6 +108,8 @@ const { url, frequency, reports} = Astro.props;
 ---
 
 <BaseLayout pageTitle={`Replenishment | ${task}`}>
-  <h1 class="page-title arab-txt text-3xl" dir="rtl">{task}</h1>
+	<div class="page-title arab-txt  mr-4 pr-2 lg:mr-0 flex justify-end items-center border-right border-r-4 border-gray-600 lg:border-0">
+		<h1 class=" text-xl md:text-2xl lg:text-3xl font-bold lg:font-semibold text-gray-900" dir="rtl">{task}</h1>
+	</div>
   <Main url={url} frequency={frequency} reports={reports} videoSrc={'https://www.youtube.com/embed/eqFR5kFKdOs'} />
 </BaseLayout>
