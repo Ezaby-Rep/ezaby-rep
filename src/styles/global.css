@@ -1,26 +1,113 @@
 body {
-  font-family: 'Poppins', sans-serif;
+	font-family: 'Poppins', sans-serif;
+}
+
+.layout-container {
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: 70px 80px 1fr 30px 100px;
+	grid-template-areas:
+		'hd hd hd hd hd hd hd hd'
+		'tl tl tl tl tl tl tl tl'
+		'mn mn mn mn mn mn mn mn'
+		'. . . . . . . .'
+		'ft ft ft ft ft ft ft ft';
 }
 
 header {
-  grid-area: hd;
+	grid-area: hd;
 }
 main {
-  grid-area: mn;
+	grid-area: mn;
+	@apply flex flex-col items-start px-4 lg:pr-0;
 }
 aside {
-  grid-area: sd;
+	grid-area: sd;
+	@apply hidden lg:block border-solid border-l-2 border-gray-200 text-xl;
+}
+
+@media screen and (min-width: 1024px) {
+	.layout-container {
+		grid-template-columns: repeat(8, 1fr);
+		grid-template-rows: 70px 80px 1fr 30px 100px;
+		grid-template-areas:
+			'hd hd hd hd hd hd hd hd'
+			'tl tl tl tl tl tl sd sd'
+			'mn mn mn mn mn mn sd sd'
+			'. . . . . . . .'
+			'ft ft ft ft ft ft ft ft';
+	}
 }
 
 .arab-txt {
-  font-family: 'Cairo', sans-serif;
+	font-family: 'Cairo', sans-serif;
 }
 
 .page-title {
-  grid-area: tl;
+	grid-area: tl;
+	@apply px-4 lg:pr-0;
 }
 
 footer {
-  padding: 18px;
-  grid-area: ft;
+	grid-area: ft;
+	@apply p-4 z-20;
 }
+
+.open-drawer {
+	-webkit-animation: drawer 0.3s ease-in-out;
+	animation: drawer 0.3s ease-in-out;
+	@apply flex flex-col absolute w-full h-full  top-[70px] right-0 bottom-0 z-10 bg-slate-800 bg-opacity-90 text-white justify-center;
+}
+.close-drawer {
+	-webkit-animation: close 0.3s ease-in-out;
+	animation: close 0.3s ease-in-out;
+	@apply flex flex-col absolute w-0 h-full  top-[70px] right-0 bottom-0 z-10 bg-slate-800 text-white justify-center;
+}
+
+.remove-txt {
+	visibility: hidden;
+}
+
+@-webkit-keyframes drawer {
+	from {
+		width: 0;
+		color: transparent;
+	}
+	to {
+		width: 100%;
+		color: #fff;
+	}
+}
+@keyframes drawer {
+	from {
+		width: 0;
+		color: transparent;
+	}
+	to {
+		width: 100%;
+		color: #fff;
+	}
+}
+@-webkit-keyframes close {
+	from {
+		width: 100%;
+		color: #fff;
+	}
+
+	to {
+		width: 0;
+		color: transparent;
+	}
+}
+@keyframes close {
+	from {
+		width: 100%;
+		color: #fff;
+	}
+
+	to {
+		width: 0;
+		color: transparent;
+	}
+}
+
+
