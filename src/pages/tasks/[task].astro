@@ -106,7 +106,9 @@ export async function getStaticPaths() {
 const { task } = Astro.params;
 const { url, frequency, reports} = Astro.props;
 ---
-
+<script>
+	import '../../scripts/protect-routes.js'
+</script>
 <BaseLayout pageTitle={`Replenishment | ${task}`}>
 	<div class="page-title arab-txt  mr-4 pr-2 lg:mr-0 flex justify-end items-center border-right border-r-4 border-gray-600 lg:border-0">
 		<h1 class=" text-xl md:text-2xl lg:text-3xl font-bold lg:font-semibold text-gray-900" dir="rtl">{task}</h1>

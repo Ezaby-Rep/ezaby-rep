@@ -16,13 +16,33 @@ const pageTitle = 'Replenishment | تسجيل الدخول';
 			سجل الدخول
 		</h1>
 	</div>
-	<main class='gap-6 items-center pt-16'>
-    <label for="password">
-      كلمة السر
-      <input type="password" name="password" id="password" />
-  </main>
+	<main class='gap-6 pt-16'>
+		<div class='mr-4 w-72'>
+			<label
+				for='password'
+				dir='rtl'
+				class='block mb-2 text-lg lg:text-xl font-medium text-gray-900 arab-txt'
+				>كلمة السر</label
+			>
+			<input
+				type='password'
+				id='password'
+				name='password'
+				class='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5'
+				required
+			/>
+			<p id='invalid-pass' class='text-red-600 arab-txt text-sm invisible'>
+				...كلمة السر غير صحيحة
+			</p>
+		</div>
+		<div
+		id="spinner"
+			class='self-center w-12 h-12 rounded-full animate-spin border-2 border-solid border-sky-700 border-t-transparent invisible'
+		>
+		</div>
+	</main>
 </BaseLayout>
 
 <script>
-  import '../scripts/login.js'
+	import '../scripts/login.js';
 </script>
