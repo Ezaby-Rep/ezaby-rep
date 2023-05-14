@@ -1,0 +1,28 @@
+---
+import Main from '../components/Main.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pass = 'islam2023';
+const pageTitle = 'Replenishment | تسجيل الدخول';
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<div
+		class='page-title arab-txt mr-4 pr-2 lg:mr-0 flex justify-end items-center border-right border-r-4 border-gray-600'
+	>
+		<h1
+			class='text-xl md:text-2xl lg:text-3xl font-bold lg:font-semibold text-gray-900'
+			dir='rtl'
+		>
+			سجل الدخول
+		</h1>
+	</div>
+	<main class='gap-6 items-center pt-16'>
+    <label for="password">
+      كلمة السر
+      <input type="password" name="password" id="password" />
+  </main>
+</BaseLayout>
+
+<script>
+  import '../scripts/login.js'
+</script>

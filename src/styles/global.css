@@ -102,3 +102,29 @@ footer {
 }
 
 
+.typed {
+	
+	line-height: 35px;
+	width: 80%;
+	font-size: 150%;
+	text-align: right;
+	vertical-align: text-bottom;
+}
+
+.typed::after{
+	content: "|";
+	font-size: 150%;
+	line-height: 30px;
+	-webkit-animation: blink .75s step-end infinite;
+	        animation: blink .75s step-end infinite;
+}
+
+@-webkit-keyframes blink {
+	from, to { color: transparent }
+	50% { color: #434343 }
+}
+
+@keyframes blink {
+	from, to { color: transparent }
+	50% { color: #434343}
+}

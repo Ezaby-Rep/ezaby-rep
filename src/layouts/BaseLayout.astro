@@ -95,6 +95,7 @@ const tasks = [
 			sapReports: ['ZSTOCK', 'ZSTO5'],
 		},
 	];
+
 ---
 
 <html lang='en'>
@@ -121,7 +122,8 @@ const tasks = [
 		<div class='grid gap-4 layout-container'>
 			<Header />
 			<slot />
-			<SideMenu tasks={tasks} />
+			{pageTitle.includes('Home') || pageTitle.includes('تسجيل الدخول') ? "" : <SideMenu tasks={tasks} />}
+			
 			<Footer />
 		</div>
 		<script>
