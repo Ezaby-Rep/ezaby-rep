@@ -3,7 +3,9 @@ import Card from '../components/Card.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 const allNotes = await Astro.glob('../pages/posts/notes/*.md');
 ---
-
+<script>
+	import '../scripts/protect-routes.js'
+</script>
 <BaseLayout pageTitle='طلبيات الفروع | ملاحظات'>
 	<div
 		class='page-title arab-txt mr-4 pr-2 lg:mr-0 flex justify-end items-center border-right border-r-4 border-gray-600'
