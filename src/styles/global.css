@@ -22,6 +22,7 @@ main {
 }
 aside {
 	grid-area: sd;
+	transition: all 0.3s linear;
 	@apply hidden lg:block border-solid border-l-2 border-gray-200 text-xl;
 }
 
@@ -52,13 +53,14 @@ footer {
 }
 
 .open-drawer {
-	-webkit-animation: drawer 0.3s ease-in-out;
-	animation: drawer 0.3s ease-in-out;
-	@apply flex flex-col absolute w-full h-full  top-[70px] right-0 bottom-0 z-10 bg-slate-800 bg-opacity-90 text-white justify-center;
+	/* -webkit-animation: drawer 0.3s ease-in-out;
+	animation: drawer 0.3s ease-in-out; */
+	
+	@apply flex flex-col absolute w-full h-full  top-[70px] right-0 bottom-0 z-10 bg-slate-800 text-white justify-center border-0;
 }
 .close-drawer {
-	-webkit-animation: close 0.3s ease-in-out;
-	animation: close 0.3s ease-in-out;
+	/* -webkit-animation: close 0.3s ease-in-out;
+	animation: close 0.3s ease-in-out; */
 	@apply flex flex-col absolute w-0 h-full  top-[70px] right-0 bottom-0 z-10 bg-slate-800 text-white justify-center;
 }
 
