@@ -1,6 +1,7 @@
 const burger = document.querySelector('.burger')
 const drawer = document.querySelector('aside')
 const asideText = document.querySelector('aside ul')
+
 burger.addEventListener('click', () => {
   if (drawer.classList.contains('open-drawer')) {
     drawer.classList.add('close-drawer')
@@ -10,6 +11,5 @@ burger.addEventListener('click', () => {
     drawer.classList.add('open-drawer')
     drawer.classList.remove('close-drawer')
     asideText.classList.remove('remove-txt')
-
   }
 })
