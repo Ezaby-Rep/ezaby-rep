@@ -1,11 +1,12 @@
 ---
-
+const d = new Date();
+const year = d.getFullYear();
 ---
 <footer class="flex flex-col justify-center items-end text-white bg-gray-700 text-sm p-4">
-  <p>
-    © 2023 REPLENISHMENT TEAM - All rights reserved.
+  <p dir="rtl" class="arab-txt">
+    © {year}     قسم طلبيات الفروع - جميع الحقوق محفوظة 
   </p>
-  <p>
-    Developed by <a class="underline italic" href="https://www.linkedin.com/in/islam-sayed-ibrahim/">Islam Sayed</a>.
+  <p class="arab-txt" dir="rtl">
+    تم التصميم و التطوير بواسطة  <a class="underline font-bold" href="https://www.linkedin.com/in/islam-sayed-ibrahim/"> إسلام سيد</a>.
   </p>
 </footer>

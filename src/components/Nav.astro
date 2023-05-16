@@ -1,6 +1,6 @@
 ---
 import Burger from './Burger.astro';
-const navLinks = [{ title: 'الرئيسية', url: '/' }];
+const navLinks = [{ title: 'الرئيسية', url: '/' }, {title: 'ملاحظات', url: '/notes'}];
 ---
 
 <nav class='flex'>
@@ -48,14 +48,14 @@ const navLinks = [{ title: 'الرئيسية', url: '/' }];
 			navLinks.map(link => (
 				<a
 					href={link.url}
-					class='arab-txt text-sm lg:text-base pl-3 font-bold italic'
+					class='arab-txt text-sm lg:text-base pl-4 lg:pl-6 font-bold italic'
 				>
 					{link.title}
 				</a>
 			))
 		}
 	</div>
-	<Burger />
+	<!-- <Burger /> -->
 </nav>
  <script>
 	import '../scripts/nav.js'
