@@ -2,12 +2,20 @@
 import ReportTag from "./ReportTag.astro";
 import FrequencyTag from './FrequencyTag.astro'
 import Video from "./Video.astro";
-const {videoSrc} = Astro.props;
+const {videoSrc, title} = Astro.props;
 
 const {url, frequency, reports} = Astro.props
 ---
 <main class="">
-  <Video videoSrc={videoSrc} />
+  <div class="flex flex-col gap-4 w-full">
+
+  {
+    videoSrc.map(video => 
+      <Video videoSrc={video} title={title} />
+    )
+  }
+
+  </div>
   <div class="flex justify-between flex-wrap w-full my-4">
     <ul class="flex flex-wrap gap-2">
       {

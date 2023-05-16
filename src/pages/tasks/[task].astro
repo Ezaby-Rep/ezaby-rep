@@ -8,30 +8,35 @@ export async function getStaticPaths() {
 			url: '/tasks/فرش الفروع الجديدة',
 			frequency: 'شهرى',
 			sapReports: ['ZSTO5_FM', 'ZOVR_FM', 'ZTOCK_HANA', 'Z_ALLOC'],
+			video: ['TSOQufh-RHo']
 		},
-		{
-			title: 'مخزن طنطا',
-			url: '/tasks/مخزن طنطا',
-			frequency: 'يومى',
-			sapReports: ['MB52', 'ZPR_SYSTEM', 'ZPRG_PR'],
-		},
+		// {
+		// 	title: 'مخزن طنطا',
+		// 	url: '/tasks/مخزن طنطا',
+		// 	frequency: 'يومى',
+		// 	sapReports: ['MB52', 'ZPR_SYSTEM', 'ZPRG_PR'],
+		// 	video: 'https://www.youtube.com/embed/TSOQufh-RHo'
+		// },
 		{
 			title: 'الموارد البشرية',
 			url: '/tasks/الموارد البشرية',
 			frequency: 'يومى',
 			sapReports: [],
+			video: ['TSOQufh-RHo']
 		},
 		{
 			title: 'متابعة و تعديل البراند',
 			url: '/tasks/متابعة و تعديل البراند',
 			frequency: 'يومى',
 			sapReports: ['ZREP_BRAND'],
+			video: ['TSOQufh-RHo']
 		},
 		{
 			title: 'تقرير المخزون',
 			url: '/tasks/تقرير المخزون',
 			frequency: 'أسبوعى',
 			sapReports: ['ZSTOCK_P'],
+			video: ['TSOQufh-RHo']
 		},
 		{
 			title: 'عمل ال MRP',
@@ -46,48 +51,56 @@ export async function getStaticPaths() {
 				'ZCAT6',
 				'ZCAT6_UPLOAD',
 			],
+			video: ['TSOQufh-RHo']
 		},
 		{
 			title: 'رفع المعدلات',
 			url: '/tasks/رفع المعدلات',
 			frequency: 'شهرى',
 			sapReports: ['ZCAT6 MODIFY'],
+			video: ['Yu5F3GCZ1cI', 'kEs_DKe1pBU', 'H_olxtd3tPQ']
 		},
 		{
 			title: 'تحويلات الأدوية - تجميل - ترانزيت',
 			url: '/tasks/تحويلات الأدوية - تجميل - ترانزيت',
 			frequency: 'أسبوعى',
 			sapReports: ['ZTOCK_HANA', 'ZPRG', 'Z_ALLOC'],
+			video: ['alm9nm41OqY']
 		},
 		{
 			title: 'تقرير البيع',
 			url: '/tasks/تقرير البيع',
 			frequency: 'أسبوعى',
 			sapReports: ['ZEZ6_S4'],
+			video: ['Hpb2BlBzNWo']
 		},
 		{
 			title: 'طلبية البوث',
 			url: '/tasks/طلبية البوث',
 			frequency: 'أسبوعى',
 			sapReports: ['ZSTO5'],
+			video: ['TSOQufh-RHo']
 		},
 		{
 			title: 'الباكت',
 			url: '/tasks/الباكت',
 			frequency: 'أسبوعى',
 			sapReports: ['MB52', 'ZFOR'],
+			video: ['TSOQufh-RHo']
 		},
 		{
 			title: 'تقرير التحويلات',
 			url: '/tasks/تقرير التحويلات',
 			frequency: 'أسبوعى',
 			sapReports: ['ZEZ9H_BI'],
+			video: ['XpCl2qL3VpM']
 		},
 		{
 			title: 'قريب الانتهاء',
 			url: '/tasks/قريب الانتهاء',
 			frequency: 'شهرى',
 			sapReports: ['ZSTOCK', 'ZSTO5'],
+			video: ['Nl43bBa9a_o']
 		},
 	];
 	return tasks.map(oneTask => {
@@ -98,13 +111,14 @@ export async function getStaticPaths() {
 				url: oneTask.url,
 				frequency: oneTask.frequency,
 				reports: oneTask.sapReports,
+				video:  oneTask.video,
 			},
 		};
 	});
 }
 
 const { task } = Astro.params;
-const { url, frequency, reports} = Astro.props;
+const { url, frequency, reports, video} = Astro.props;
 ---
 <script>
 	import '../../scripts/protect-routes.js'
@@ -113,5 +127,5 @@ const { url, frequency, reports} = Astro.props;
 	<div class="page-title arab-txt  mr-4 pr-2 lg:mr-0 flex justify-end items-center border-right border-r-4 border-gray-600 lg:border-0">
 		<h1 class=" text-xl md:text-2xl lg:text-3xl font-bold lg:font-semibold text-gray-900" dir="rtl">{task}</h1>
 	</div>
-  <Main url={url} frequency={frequency} reports={reports} videoSrc={'https://www.youtube.com/embed/eqFR5kFKdOs'} />
+  <Main url={url} title={task} frequency={frequency} reports={reports} videoSrc={video} />
 </BaseLayout>
