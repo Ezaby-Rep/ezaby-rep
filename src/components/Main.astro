@@ -16,7 +16,7 @@ const {url, frequency, reports} = Astro.props
   }
 
   </div>
-  <div class="flex justify-between flex-wrap w-full my-4">
+  <div class="flex justify-between flex-wrap w-full my-4 gap-2">
     <ul class="flex flex-wrap gap-2">
       {
         reports.map(report => <ReportTag report={report} />)

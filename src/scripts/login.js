@@ -7,7 +7,7 @@ passInput.addEventListener('input', (e) => {
     invalidPass.style.visibility = 'hidden';
     spinner.style.visibility = 'visible';
     sessionStorage.setItem('mrp-login', true);
-    setTimeout(() => window.location.replace('/tasks/فرش%20الفروع%20الجديدة'), 3000)
+    setTimeout(() => window.location.replace('/tasks/فرش الفروع الجديدة [ترانزيت]'), 3000)
   } else {
     invalidPass.style.visibility = 'visible';
   }

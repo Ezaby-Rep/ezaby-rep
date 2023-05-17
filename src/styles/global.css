@@ -23,7 +23,8 @@ main {
 aside {
 	grid-area: sd;
 	transition: all 0.3s linear;
-	@apply hidden lg:block border-solid border-l-2 border-gray-200 text-xl pl-4;
+	direction: rtl;
+	@apply hidden lg:block border-solid border-l-2 border-gray-200 text-xl pl-4 h-screen overflow-auto;
 }
 
 @media screen and (min-width: 1024px) {
@@ -129,4 +130,47 @@ footer {
 @keyframes blink {
 	from, to { color: transparent }
 	50% { color: #434343}
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 12px;
+	border-radius: 50%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888888b0; 
+	border-radius: 2px;
+	
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555555c0; 
+}
+
+aside::-webkit-scrollbar {
+  width: 6px;
+}
+
+aside::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+aside::-webkit-scrollbar-thumb {
+  background: #88888887; 
+	border-radius: 2px;
+	
+}
+
+/* Handle on hover */
+aside::-webkit-scrollbar-thumb:hover {
+  background: #55555579; 
 }

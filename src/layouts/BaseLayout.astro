@@ -8,93 +8,199 @@ import Footer from '../components/Footer.astro';
 const { pageTitle } = Astro.props;
 
 const tasks = [
-	{
-		title: 'فرش الفروع الجديدة',
-		url: '/tasks/فرش الفروع الجديدة',
-		frequency: 'شهرى',
-		sapReports: ['ZSTO5_FM', 'ZOVR_FM', 'ZTOCK_HANA', 'Z_ALLOC'],
-	},
-	// {
-	// 	title: 'مخزن طنطا',
-	// 	url: '/tasks/مخزن طنطا',
-	// 	frequency: 'يومى',
-	// 	sapReports: ['MB52', 'ZPR_SYSTEM', 'ZPRG_PR'],
-	// },
-	{
-		title: 'الموارد البشرية',
-		url: '/tasks/الموارد البشرية',
-		frequency: 'يومى',
-		sapReports: [],
-	},
-	{
-		title: 'متابعة و تعديل البراند',
-		url: '/tasks/متابعة و تعديل البراند',
-		frequency: 'يومى',
-		sapReports: ['ZREP_BRAND'],
-	},
-	{
-		title: 'تقرير المخزون',
-		url: '/tasks/تقرير المخزون',
-		frequency: 'أسبوعى',
-		sapReports: ['ZSTOCK_P'],
-	},
-	{
-		title: 'عمل ال MRP',
-		url: '/tasks/عمل ال MRP',
-		frequency: 'يومى',
-		sapReports: [
-			'ZCAT6 MODIFY',
-			'ZPRG',
-			'ZSITE SHARE',
-			' ZEZ9_BI',
-			'ZTOCK_HANA',
-			'ZCAT6',
-			'ZCAT6_UPLOAD',
-		],
-	},
-	{
-		title: 'رفع المعدلات',
-		url: '/tasks/رفع المعدلات',
-		frequency: 'شهرى',
-		sapReports: ['ZCAT6 MODIFY'],
-	},
-	{
-		title: 'تحويلات الأدوية - تجميل - ترانزيت',
-		url: '/tasks/تحويلات الأدوية - تجميل - ترانزيت',
-		frequency: 'أسبوعى',
-		sapReports: ['ZTOCK_HANA', 'ZPRG', 'Z_ALLOC'],
-	},
-	{
-		title: 'تقرير البيع',
-		url: '/tasks/تقرير البيع',
-		frequency: 'أسبوعى',
-		sapReports: ['ZEZ6_S4'],
-	},
-	{
-		title: 'طلبية البوث',
-		url: '/tasks/طلبية البوث',
-		frequency: 'أسبوعى',
-		sapReports: ['ZSTO5'],
-	},
-	{
-		title: 'الباكت',
-		url: '/tasks/الباكت',
-		frequency: 'أسبوعى',
-		sapReports: ['MB52', 'ZFOR'],
-	},
-	{
-		title: 'تقرير التحويلات',
-		url: '/tasks/تقرير التحويلات',
-		frequency: 'أسبوعى',
-		sapReports: ['ZEZ9H_BI'],
-	},
-	{
-		title: 'قريب الانتهاء',
-		url: '/tasks/قريب الانتهاء',
-		frequency: 'شهرى',
-		sapReports: ['ZSTOCK', 'ZSTO5'],
-	},
-];
+		{
+			title: 'فرش الفروع الجديدة [ترانزيت]',
+			url: '/tasks/فرش الفروع الجديدة [ترانزيت]',
+			frequency: 'شهرى',
+			sapReports: ['ZSTO5_FM', 'ZOVR_FM', 'ZTOCK_HANA', 'Z_ALLOC'],
+			video: ['ctrfl7W477g']
+		},
+		// {
+		// 	title: 'مخزن طنطا',
+		// 	url: '/tasks/مخزن طنطا',
+		// 	frequency: 'يومى',
+		// 	sapReports: ['MB52', 'ZPR_SYSTEM', 'ZPRG_PR'],
+		// 	video: 'https://www.youtube.com/embed/TSOQufh-RHo'
+		// },
+		{
+			title: 'الموارد البشرية',
+			url: '/tasks/الموارد البشرية',
+			frequency: 'يومى',
+			sapReports: [],
+			video: ['']
+		},
+		{
+			title: 'متابعة و تعديل البراند',
+			url: '/tasks/متابعة و تعديل البراند',
+			frequency: 'يومى',
+			sapReports: ['ZREP_BRAND'],
+			video: ['TSOQufh-RHo']
+		},
+		{
+			title: 'تقرير المخزون',
+			url: '/tasks/تقرير المخزون',
+			frequency: 'أسبوعى',
+			sapReports: ['ZSTOCK_P'],
+			video: ['TSOQufh-RHo']
+		},
+		{
+			title: 'عمل ال MRP',
+			url: '/tasks/عمل ال MRP',
+			frequency: 'يومى',
+			sapReports: [
+				'ZCAT6 MODIFY',
+				'ZPRG',
+				'ZSITE SHARE',
+				' ZEZ9_BI',
+				'ZTOCK_HANA',
+				'ZCAT6',
+				'ZCAT6_UPLOAD',
+			],
+			video: ['TSOQufh-RHo']
+		},
+		{
+			title: 'رفع المعدلات',
+			url: '/tasks/رفع المعدلات',
+			frequency: 'شهرى',
+			sapReports: ['ZCAT6 MODIFY'],
+			video: ['Yu5F3GCZ1cI', 'kEs_DKe1pBU', 'H_olxtd3tPQ']
+		},
+		{
+			title: 'تحويلات أدوية و تجميل',
+			url: '/tasks/تحويلات أدوية و تجميل',
+			frequency: 'أسبوعى',
+			sapReports: ['ZTOCK_HANA', 'ZPRG', 'Z_ALLOC'],
+			video: ['alm9nm41OqY']
+		},
+		{
+			title: 'تحويلات ترانزيت',
+			url: '/tasks/تحويلات ترانزيت',
+			frequency: 'أسبوعى',
+			sapReports: ['ZTOCK_HANA', 'ZPRG', 'Z_ALLOC'],
+			video: ['MlsXX71-ff0']
+		},
+		{
+			title: 'تقرير البيع',
+			url: '/tasks/تقرير البيع',
+			frequency: 'أسبوعى',
+			sapReports: ['ZEZ6_S4'],
+			video: ['Hpb2BlBzNWo']
+		},
+		{
+			title: 'طلبية البوث',
+			url: '/tasks/طلبية البوث',
+			frequency: 'أسبوعى',
+			sapReports: ['ZSTO5'],
+			video: ['TSOQufh-RHo']
+		},
+		{
+			title: 'الباكت',
+			url: '/tasks/الباكت',
+			frequency: 'أسبوعى',
+			sapReports: ['MB52', 'ZFOR'],
+			video: ['k0DtGc-gc2o']
+		},
+		{
+			title: 'تقرير التحويلات',
+			url: '/tasks/تقرير التحويلات',
+			frequency: 'أسبوعى',
+			sapReports: ['ZEZ9H_BI'],
+			video: ['XpCl2qL3VpM']
+		},
+		{
+			title: 'قريب الانتهاء',
+			url: '/tasks/قريب الانتهاء',
+			frequency: 'شهرى',
+			sapReports: ['ZSTOCK', 'ZSTO5'],
+			video: ['Nl43bBa9a_o']
+		},
+		//EDITING
+		{
+			title: 'متابعة مخزن 1050',
+			url: '/tasks/متابعة مخزن 1050',
+			frequency: 'يومى',
+			sapReports: ['MB52', 'ZPRG'],
+			video: ['xrK9X-FMrvc']
+		},
+		{
+			title: 'متابعة مخزن 1020',
+			url: '/tasks/متابعة مخزن 1020',
+			frequency: 'يومى',
+			sapReports: ['MB52', 'ZPRG'],
+			video: ['dzIzu1IcKPc']
+		},
+		{
+			title: 'أوفر ستوك',
+			url: '/tasks/أوفر ستوك',
+			frequency: '',
+			sapReports: [''],
+			video: ['jFOCmi4W8E4']
+		},
+		{
+			title: 'أصناف فايزر',
+			url: '/tasks/أصناف فايزر',
+			frequency: 'يومى',
+			sapReports: ['ZPRG'],
+			video: ['STIOBAtjHMk']
+		},
+		{
+			title: 'طلبات خاصة لم تباع',
+			url: '/tasks/طلبات خاصة لم تباع',
+			frequency: 'شهري',
+			sapReports: ['ZEZ9H_BI', 'ZOVR'],
+			video: ['Jjc7IhNV62k']
+		},
+		{
+			title: 'متابعة ال local storage',
+			url: '/tasks/متابعة ال local storage',
+			frequency: 'يومى',
+			sapReports: ['MB52', 'ZPRG' ],
+			video: ['2Mc2MU-Lde8']
+		},
+		{
+			title: 'لم يتم خروجها بالطلبيات',
+			url: '/tasks/لم يتم خروجها بالطلبيات',
+			frequency: 'أسبوعى',
+			sapReports: ['ZEZ15', 'ZSTOCK'],
+			video: ['DV0JQ31JCkY']
+		},
+		{
+			title: 'متابعة أصناف PSP',
+			url: '/tasks/متابعة أصناف PSP',
+			frequency: 'يومى',
+			sapReports: ['ZPRG', 'ZSTO5'],
+			video: ['aVeF2oF5-2w']
+		},
+		{
+			title: 'الاهلاكات',
+			url: '/tasks/الاهلاكات',
+			frequency: 'متغير',
+			sapReports: ['MIGO', 'ZSCRAP_HANA', 'MB52'],
+			video: ['n4pKLz0QAuE']
+		},
+		{
+			title: 'فرش الفروع الجديدة [أدوية و تجميل]',
+			url: '/tasks/فرش الفروع الجديدة [أدوية و تجميل]',
+			frequency: 'متغير',
+			sapReports: ['ZSITE', 'ZFOR', 'ZCAT6_UPLOAD', 'ZPRG_P', 'ZPORTO', 'ZABCD', 'ZSTO5', 'ZSTOCK_HANA'],
+			video: ['8CKUHj6hUYs']
+		},
+		{
+			title: 'رفع و حذف الأوفرستوك',
+			url: '/tasks/رفع و حذف الأوفرستوك',
+			frequency: 'ربع سنوى',
+			sapReports: ['ZCAT6_MODIFY', 'ZCAT6_UPLOAD'],
+			video: ['tioso0hwH2g']
+		},
+		{
+			title: 'متابعة الطلبيات',
+			url: '/tasks/متابعة الطلبيات',
+			frequency: 'يومى',
+			sapReports: ['ZEZ9H_BI', 'ZSTO5', 'ZEZ9'],
+			video: ['X5CpAbC4nLg']
+		},
+	];
+	
 ---
 
 <html lang='en'>

@@ -1,7 +1,7 @@
 ---
 import Card from '../components/Card.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-const allNotes = await Astro.glob('../pages/posts/notes/*.md');
+const allTutorials = await Astro.glob('../pages/posts/tutorials/*.md');
 ---
 
 <BaseLayout pageTitle='طلبيات الفروع | ملاحظات'>
@@ -12,12 +12,12 @@ const allNotes = await Astro.glob('../pages/posts/notes/*.md');
 			class='text-xl md:text-2xl lg:text-3xl font-bold lg:font-semibold text-gray-900'
 			dir='rtl'
 		>
-			أهم الملاحظات
+ تعلم
 		</h1>
 	</div>
 	<main class='flex-row justify-end items-start gap-6 pt-16 flex-wrap'>
 		{
-			allNotes.map(note => (
+			allTutorials.map(note => (
 				<Card
 					title={note.frontmatter.title}
 					url={note.url}

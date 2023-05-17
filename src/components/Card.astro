@@ -2,7 +2,7 @@
 const { title, url, pubDate, thumbnail, author } = Astro.props;
 ---
 
-<div class='max-w-sm w-72 rounded overflow-hidden shadow-lg'>
+<div class='max-w-sm w-72 rounded h-[456px] overflow-hidden shadow-lg'>
 	<a href={url}>
 		<img class='w-full' src={thumbnail.url} alt={thumbnail.alt} />
 		<div class='px-6 py-4'>
