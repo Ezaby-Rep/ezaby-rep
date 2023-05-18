@@ -217,7 +217,7 @@ const { tasks } = Astro.props;
 <BaseLayout pageTitle={`قسم الطلبيات | ${frequency}`}>
 	<div class="page-title arab-txt  mr-4 pr-2 lg:mr-0 flex flex-col items-end justify-center border-right border-r-4 border-gray-600 lg:border-0">
 		<h1 class='arab-txt text-3xl' dir='rtl'>{frequency}</h1>
-		<p class="mt-2 arab-txt text-gray-700" dir="rtl">مهام تنفذ بتكرار {frequency} :</p>
+		<p class="mt-2 arab-txt text-gray-700" dir="rtl">مهام تنفذ بتكرار <span class="font-bold">{`"${frequency}"`}</span> :</p>
 	</div>
 	<main class='flex-row-reverse items-center'>
 		<ul class='flex flex-col gap-10 items-end mt-4 mr-4  self-start'>
