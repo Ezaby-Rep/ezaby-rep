@@ -24,7 +24,7 @@ aside {
 	grid-area: sd;
 	transition: all 0.3s linear;
 	direction: rtl;
-	@apply hidden lg:block border-solid border-l-2 border-gray-200 text-xl pl-4 h-screen overflow-auto;
+	@apply hidden lg:block border-solid border-l-2 border-gray-200 text-xl pl-4 h-[calc(100vh-20px)] lg:h-screen overflow-auto;
 }
 
 @media screen and (min-width: 1024px) {
@@ -57,12 +57,12 @@ footer {
 	/* -webkit-animation: drawer 0.3s ease-in-out;
 	animation: drawer 0.3s ease-in-out; */
 	
-	@apply flex flex-col absolute  top-[60px] right-0 bottom-0 z-10 bg-slate-800 text-white justify-center border-0;
+	@apply flex flex-col absolute  top-[60px] right-0 bottom-0 z-10 bg-slate-800 text-white border-0;
 }
 .close-drawer {
 	/* -webkit-animation: close 0.3s ease-in-out;
 	animation: close 0.3s ease-in-out; */
-	@apply flex flex-col absolute w-0   top-[60px] right-0 bottom-0 z-10 bg-slate-800 text-white justify-center;
+	@apply flex flex-col absolute w-0   top-[60px] right-0 bottom-0 z-10 bg-slate-800 text-white;
 }
 
 .remove-txt {

@@ -17,7 +17,7 @@ const { title, url, pubDate, thumbnail, author, tags } = Astro.props;
 		<div dir="rtl" class='px-6 pt-4 pb-2'>
 			{
 				tags.map(tag => (
-					<span class="arab-txt inline-block bg-gray-100 rounded-lg font-semibold px-3 py-1 text-sm text-gray-600 mr-2 mb-2">{tag}</span>
+					<a href={`/tags/${tag}`} class="hover:bg-gray-600 hover:text-gray-100 arab-txt inline-block bg-gray-100 rounded-lg font-semibold px-3 py-1 text-sm text-gray-600 mr-2 mb-2">{tag}</a>
 				))
 			</div>
 			}

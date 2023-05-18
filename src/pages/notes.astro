@@ -9,7 +9,7 @@ const allNotes = await Astro.glob('../pages/posts/notes/*.md');
 <script>
 	import '../scripts/protect-routes.js'
 </script>
-<BaseLayout pageTitle='طلبيات الفروع | ملاحظات'>
+<BaseLayout pageTitle='قسم الطلبيات | ملاحظات'>
 	<div
 		class='page-title arab-txt mr-4 pr-2 lg:mr-0 flex justify-end items-center border-right border-r-4 border-gray-600'
 	>
@@ -20,9 +20,9 @@ const allNotes = await Astro.glob('../pages/posts/notes/*.md');
 			أهم الملاحظات
 		</h1>
 	</div>
-	<main class='flex-row justify-center md:justify-end items-start gap-6 pt-16 flex-wrap'>
+	<main class='flex-row  justify-center md:justify-end items-start gap-6 pt-16 flex-wrap'>
 		{
-			allNotes.map(note => (
+			allNotes.reverse().map(note => (
 				<Card
 					title={note.frontmatter.title}
 					url={note.url}

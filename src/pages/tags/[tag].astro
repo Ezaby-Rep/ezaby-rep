@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+
+export async function getStaticPaths() {
+  const allNotes = await Astro.glob('../../pages/posts/notes/*.md');
+	
+  const uniqueTags = [...new Set (allNotes.map(note => note.frontmatter.tags).flat())]
+  return uniqueTags.map(tag => {
+    const filteredNotes = allNotes.filter((note) => note.frontmatter.tags.includes(tag));
+    return {params: {tag}, props: {notes: filteredNotes}}
+  })
+}
+
+const { tag } = Astro.params;
+const { notes } = Astro.props;
+---
+<script>
+	import '../../scripts/protect-routes.js'
+</script>
+<BaseLayout pageTitle={`قسم الطلبيات | ${tag}`}>
+	<div class="page-title arab-txt  mr-4 pr-2 lg:mr-0 flex flex-col items-end justify-center border-right border-r-4 border-gray-600 lg:border-0">
+		<h1 class="arab-txt text-3xl" dir="rtl">{tag}</h1>
+		<p class="mt-2 arab-txt text-gray-700" dir="rtl">ملاحظات تحتوى على <span class="font-bold">{`"${tag}"`}</span></p>
+	</div>
+	<main class="flex-row-reverse items-center">
+		<ul class="flex flex-row-reverse gap-10 items-end mt-4 mr-4 self-start">
+			{notes.reverse().map((note) => <Card
+        title={note.frontmatter.title}
+        url={note.url}
+        pubDate={note.frontmatter.pubDate.slice(0, 10)}
+        thumbnail={note.frontmatter.image}
+        author={note.frontmatter.author}
+        tags={note.frontmatter.tags}
+      />)}
+		</ul>
+		
+	</main>
+</BaseLayout>
