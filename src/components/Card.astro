@@ -1,5 +1,5 @@
 ---
-const { title, url, pubDate, thumbnail, author } = Astro.props;
+const { title, url, pubDate, thumbnail, author, tags } = Astro.props;
 ---
 
 <div class='max-w-sm w-72 rounded h-[456px] overflow-hidden shadow-lg'>
@@ -7,17 +7,19 @@ const { title, url, pubDate, thumbnail, author } = Astro.props;
 		<img class='w-full' src={thumbnail.url} alt={thumbnail.alt} />
 		<div class='px-6 py-4'>
 			<div dir='rtl' class='font-semibold text-xl mb-2 arab-txt'>{title}</div>
-			<p dir='rtl' class='text-gray-600 text-sm'>
+			<p dir='rtl' class='text-gray-600 text-sm arab-txt'>
 				{pubDate}
 			</p>
-			<p dir='rtl' class='text-gray-900 text-sm mt-2'>
+			<p dir='rtl' class='text-gray-800 text-sm mt-2 arab-txt font-semibold'>
 				{author}
 			</p>
 		</div>
-		<div class='px-6 pt-4 pb-2'>
-			<!-- <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span> -->
-		</div>
+		<div dir="rtl" class='px-6 pt-4 pb-2'>
+			{
+				tags.map(tag => (
+					<span class="arab-txt inline-block bg-gray-100 rounded-lg font-semibold px-3 py-1 text-sm text-gray-600 mr-2 mb-2">{tag}</span>
+				))
+			</div>
+			}
 	</a>
 </div>

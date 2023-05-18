@@ -1,10 +1,10 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
-const {frontmatter} = Astro.props
+import BaseLayout from './BaseLayout.astro';
+const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitles=`طلبيات الفروع | ${frontmatter.title}`>
-  <div
+	<div
 		class='page-title arab-txt mr-4 pr-2 lg:mr-0 flex flex-col justify-center items-end border-right border-r-4 border-gray-600'
 	>
 		<h1
@@ -13,16 +13,31 @@ const {frontmatter} = Astro.props
 		>
 			{frontmatter.title}
 		</h1>
-    <p>نشر فى  {frontmatter.pubDate.slice(0,10)}</p>
+		<p>نشر فى {frontmatter.pubDate.slice(0, 10)}</p>
 	</div>
-  <main class="gap-6 pt-16 pr-6">
-    <div class="md:w-2/3 self-center">
-      <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
-    </div>
-   <div  class="arab-txt" >
-     <slot />
-     <a class="underline text-sky-700 text-lg" href={frontmatter.link}>أضغط هنا</a>
-
-   </div>
-  </main>
+	<main class='gap-6 pt-16 pr-6'>
+		<div class='md:w-2/3 self-center'>
+			<img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+		</div>
+		<div dir="rtl" class='arab-txt'>
+      {
+				frontmatter.audio && (
+          <p>ملف صوتى للاستماع 👇</p>
+					<audio class=" my-6" controls>
+						<source src={frontmatter.audio} type='audio/mp3' />
+						Your browser does not support the audio element.
+					</audio>
+				)
+			}
+			<slot />
+			
+			{
+				frontmatter.link && (
+					<a class='underline text-sky-700 text-lg' href={frontmatter.link}>
+						أضغط هنا
+					</a>
+				)
+			}
+		</div>
+	</main>
 </BaseLayout>
