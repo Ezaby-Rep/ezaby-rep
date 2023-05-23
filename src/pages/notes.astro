@@ -20,9 +20,9 @@ const allNotes = await Astro.glob('../pages/posts/notes/*.md');
 			أهم الملاحظات
 		</h1>
 	</div>
-	<main class='flex-row  justify-center md:justify-end items-start gap-6 pt-16 flex-wrap'>
+	<main class='flex-row-reverse  justify-center md:justify-start items-start gap-6 pt-16 flex-wrap'>
 		{
-			allNotes.reverse().map(note => (
+			allNotes.sort((a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)).map(note => (
 				<Card
 					title={note.frontmatter.title}
 					url={note.url}

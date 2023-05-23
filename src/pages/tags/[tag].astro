@@ -22,10 +22,11 @@ const { notes } = Astro.props;
 	<div class="page-title arab-txt  mr-4 pr-2 lg:mr-0 flex flex-col items-end justify-center border-right border-r-4 border-gray-600 lg:border-0">
 		<h1 class="arab-txt text-3xl" dir="rtl">{tag}</h1>
 		<p class="mt-2 arab-txt text-gray-700" dir="rtl">ملاحظات تحتوى على <span class="font-bold">{`"${tag}"`}</span></p>
+    <div class="self-start ml-4"><a class="arab-txt" href="/notes">← رجوع</a></div>
 	</div>
 	<main class="flex-row-reverse items-center">
-		<ul class="flex flex-row-reverse gap-10 items-end mt-4 mr-4 self-start">
-			{notes.reverse().map((note) => <Card
+		<ul class="flex flex-row-reverse flex-wrap gap-10 items-end mt-4 mr-4 self-start">
+			{notes.sort((a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)).map((note) => <Card
         title={note.frontmatter.title}
         url={note.url}
         pubDate={note.frontmatter.pubDate.slice(0, 10)}

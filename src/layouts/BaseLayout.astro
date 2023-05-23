@@ -8,6 +8,13 @@ import Footer from '../components/Footer.astro';
 const { pageTitle } = Astro.props;
 
 const tasks = [
+	{
+			title: 'طلبيات الفروع',
+			url: '/tasks/طلبيات الفروع',
+			frequency: 'يومى',
+			sapReports: ['ZSTO5'],
+			video: ['USWn4P_Zq-4'],
+		},
 		{
 			title: 'فرش الفروع الجديدة [ترانزيت]',
 			url: '/tasks/فرش الفروع الجديدة [ترانزيت]',
@@ -229,10 +236,10 @@ const tasks = [
 	</head>
 	<body>
 		<div class='grid gap-4 layout-container'>
-			<Header />
+			<Header pageTitle={pageTitle} />
 			<slot />
-			{pageTitle?.includes('تسجيل الدخول') ? '' : <SideMenu tasks={tasks} />}
-			<span id='side-menu-place'></span>
+			{ pageTitle?.includes('رئيسية') || pageTitle?.includes('تسجيل الدخول')  ? '' : <SideMenu tasks={tasks} />}
+			<!-- <span id='side-menu-place'></span> -->
 			<Footer />
 		</div>
 		<script>
