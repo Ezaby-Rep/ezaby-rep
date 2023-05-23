@@ -221,7 +221,7 @@ const { tasks } = Astro.props;
 		<ul class="flex flex-col gap-10 items-end mt-4 mr-4 self-start">
 			{tasks.map((task) => <TaskLink title={task.title} url={task.url}   />)}
 		</ul>
-		<div h-full justify-self-center self-center opacity-70 hidden md:block">
+		<div class="w-1/2 h-full justify-self-center self-center opacity-70 hidden md:block">
 			<img class="w-full" src="/assets/images/Site Stats-bro.png" alt="">
 		</div>
 	</main>
