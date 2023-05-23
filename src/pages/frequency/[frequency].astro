@@ -219,11 +219,11 @@ const { tasks } = Astro.props;
 		<h1 class='arab-txt text-3xl' dir='rtl'>{frequency}</h1>
 		<p class="mt-2 arab-txt text-gray-700" dir="rtl">مهام تنفذ بتكرار <span class="font-bold">{`"${frequency}"`}</span> :</p>
 	</div>
-	<main class='flex-row-reverse items-center'>
+	<main class='flex-row-reverse md:justify-center items-center md:pl-0'>
 		<ul class='flex flex-col gap-10 items-end mt-4 mr-4  self-start'>
 			{tasks.map(task => <TaskLink title={task.title} url={task.url} />)}
 		</ul>
-		<div class="w-2/3 h-full justify-self-center self-center opacity-70 hidden md:block">
+		<div class="w-1/2 h-full justify-self-center self-center opacity-70 hidden md:block">
 			<img src="/assets/images/Schedule-amico.png" alt="">
 		</div>
 	</main>
