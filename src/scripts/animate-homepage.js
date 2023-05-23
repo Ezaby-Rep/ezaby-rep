@@ -2,9 +2,7 @@
 if(!!window.IntersectionObserver){
 	let observer = new IntersectionObserver((entries, observer) => { 
 		entries.forEach(entry => {
-		if(entry.isIntersecting){
-			console.log(entry);
-      
+		if(entry.isIntersecting){      
       setTimeout(() => {
         entry.target.classList.add("animated")
       }, 500)
@@ -18,7 +16,6 @@ if(!!window.IntersectionObserver){
 	let secondObserver = new IntersectionObserver((entries, secondObserver) => { 
 		entries.forEach(entry => {
 		if(entry.isIntersecting){
-			console.log(entry);
       
       setTimeout(() => {
         // entry.target.style.opacity = "1"
@@ -30,9 +27,4 @@ if(!!window.IntersectionObserver){
 	}, {rootMargin: "0px 0px -100px 0px"});
 	document.querySelectorAll('.homepage-txt').forEach(vector => { secondObserver.observe(vector) });
 }
-
-// else {
-//   document.querySelector('#warning').style.display = 'block';
-
-// }
 
