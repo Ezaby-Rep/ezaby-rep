@@ -2,8 +2,8 @@
 const { title, url, pubDate, thumbnail, author, tags } = Astro.props;
 ---
 
-<div class='max-w-sm w-72 rounded h-[456px] overflow-hidden shadow-lg'>
-	<a href={url}>
+<article class='max-w-sm w-80 rounded h-[560px] overflow-hidden shadow-lg'>
+	<a href={url} class="flex flex-col justify-center">
 		<img class='w-full' src={thumbnail.url} alt={thumbnail.alt} />
 		<div class='px-6 py-4'>
 			<div dir='rtl' class='font-semibold text-xl mb-2 arab-txt'>{title}</div>
@@ -22,4 +22,4 @@ const { title, url, pubDate, thumbnail, author, tags } = Astro.props;
 			</div>
 			}
 	</a>
-</div>
+</article>
