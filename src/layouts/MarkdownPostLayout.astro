@@ -23,11 +23,17 @@ const { frontmatter } = Astro.props;
 		<div dir="rtl" class='arab-txt'>
       {
 				frontmatter.audio && (
-          <p>ملف صوتى للاستماع 👇</p>
-					<audio class=" my-6" controls>
-						<source src={frontmatter.audio} type='audio/mp3' />
-						Your browser does not support the audio element.
-					</audio>
+          
+					
+						frontmatter.audio.map(file => 
+						<p>ملف صوتى للاستماع 👇</p>
+						<audio class=" my-6" controls>
+							<source src={file} type='audio/mp3' />
+								Your browser does not support the audio element.
+						</audio>
+						)
+					
+					
 				)
 			}
 			<slot />
