@@ -2,9 +2,14 @@
 const { title, url, pubDate, thumbnail, author, tags } = Astro.props;
 ---
 
-<article class=' animate__animated animate__fadeIn animate__delay-1s arab-txt max-w-sm w-80 rounded h-[560px] overflow-hidden shadow-lg before:content-[""] before:text-red-500 before:font-bold before:ml-5 before:animate-pulse'>
-	<a href={url} class="flex flex-col justify-center">
-		<img class='w-full' src={thumbnail.url} alt={thumbnail.alt} />
+<article
+	class='animate__animated animate__fadeIn animate__delay-1s arab-txt lg:w-80 w-full rounded lg:h-[560px] h-content overflow-hidden shadow-lg before:content-[""] before:text-red-500 before:font-bold before:ml-5 before:animate-pulse'
+>
+	<a
+		href={url}
+		class='flex flex-row-reverse lg:flex-col justify-start lg:justify-center'
+	>
+		<img class='lg:w-full w-48' src={thumbnail.url} alt={thumbnail.alt} />
 		<div class='px-6 py-4'>
 			<div dir='rtl' class='font-semibold text-xl mb-2'>{title}</div>
 			<p dir='rtl' class='text-gray-600 text-sm'>
@@ -14,12 +19,17 @@ const { title, url, pubDate, thumbnail, author, tags } = Astro.props;
 				{author}
 			</p>
 		</div>
-		<div dir="rtl" class='px-6 pt-4 pb-2'>
+		<div dir='rtl' class='px-6 pt-4 pb-2'>
 			{
 				tags.map(tag => (
-					<a href={`/tags/${tag}`} class="hover:bg-gray-600 hover:text-gray-100 inline-block bg-gray-100 rounded-lg font-semibold px-3 py-1 text-sm text-gray-600 mr-2 mb-2">{tag}</a>
+					<a
+						href={`/tags/${tag}`}
+						class='hover:bg-gray-600 hover:text-gray-100 inline-block bg-gray-100 rounded-lg font-semibold px-3 py-1 text-sm text-gray-600 mr-2 mb-2'
+					>
+						{tag}
+					</a>
 				))
-			</div>
 			}
+		</div>
 	</a>
 </article>
