@@ -13,10 +13,10 @@ passInput.addEventListener('input', (e) => {
     const now = new Date().getTime()
     const mrpLogin = {
       loggedIn: true,
-      exp: now + 300000 //5 min
+      exp: now + 2592000000 //1 month
     }
     localStorage.setItem("loginStatus", JSON.stringify(mrpLogin));
-    setTimeout(() => window.location.replace('/tasks/طلبيات الفروع'), 3000)
+    setTimeout(() => window.location.replace('/notes'), 2000)
   } else {
     invalidPass.style.visibility = 'visible';
   }
