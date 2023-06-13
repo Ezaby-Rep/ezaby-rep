@@ -26,7 +26,7 @@ header {
 }
 main {
 	grid-area: mn;
-	@apply flex flex-col items-end px-4 lg:pr-0 md:pl-20 min-h-[calc(100vh-340px)];
+	@apply flex flex-col items-end px-4 lg:pr-0 lg:pl-20 min-h-[calc(100vh-340px)];
 }
 aside {
 	grid-area: sd;
