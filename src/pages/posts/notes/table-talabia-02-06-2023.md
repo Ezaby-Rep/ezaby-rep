@@ -9,6 +9,8 @@ image:
   alt: "time table"
 tags: [ "يونيو", "جدول", "طلبيات", "جدول الطلبيات"]
 link: "https://docs.google.com/spreadsheets/d/1vlsbDQdZXlTmHPQnHGXYpG3SafdAqTaR/edit?usp=sharing&ouid=118045078308367598703&rtpof=true&sd=true"
+postPath: "/posts/notes/table-talabia-02-06-2023"
+
 ---
 
 

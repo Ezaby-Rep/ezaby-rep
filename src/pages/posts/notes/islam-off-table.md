@@ -9,6 +9,8 @@ image:
   alt: "time table"
 tags: [ "اسلام","اجازة" ,"جدول"]
 link: "https://docs.google.com/spreadsheets/d/14eoZ62QeuS8yeLUkG9XvsoAO-V4RTySN/edit?usp=share_link&ouid=118045078308367598703&rtpof=true&sd=true"
+postPath: "/posts/notes/islam-off-table"
+
 ---
 
 
