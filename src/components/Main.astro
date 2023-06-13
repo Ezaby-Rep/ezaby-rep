@@ -11,7 +11,7 @@ const {url, frequency, reports} = Astro.props
 
   {
     videoSrc.map(video => 
-      <Video videoSrc={video} title={title} />
+      <Video class=" animate__animated animate__fadeIn animate__delay-1s" videoSrc={video} title={title} />
     )
   }
 
