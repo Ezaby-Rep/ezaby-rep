@@ -4,4 +4,5 @@
 const loggedIn = localStorage.getItem('loginStatus')
 const parsedLoggedIn = JSON.parse(loggedIn)
 const now = new Date().getTime();
+console.log(parsedLoggedIn)
 if (!loggedIn || parsedLoggedIn.exp < now) window.location.replace('/')
