@@ -1,10 +1,10 @@
 ---
-const { title, url, pubDate, thumbnail, author, tags } = Astro.props;
+const { title, url, pubDate, thumbnail, author, tags, recent } = Astro.props;
 ---
 
 <article
-	class='animate__animated animate__fadeIn animate__delay-1s arab-txt lg:w-80 w-full rounded lg:h-[560px] h-content overflow-hidden 
-	shadow-lg hover:shadow-sm ease-in-out duration-300  before:content-[""] before:text-red-500 before:font-bold before:ml-5 before:animate-pulse'
+	class=`relative animate__animated animate__fadeIn animate__delay-1s arab-txt lg:w-80 w-full rounded lg:h-[560px] h-content overflow-hidden 
+	shadow-lg hover:shadow-sm ease-in-out duration-300  ${recent && 'before:content-["⬤"] before:absolute before:top-2 before:left-2 before:text-red-500 before:font-bold before:animate-pulse'} `
 >
 	<a
 		href={url}
