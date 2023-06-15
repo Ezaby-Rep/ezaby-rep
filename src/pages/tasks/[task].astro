@@ -54,9 +54,9 @@ export async function getStaticPaths() {
 			video: ['TSOQufh-RHo'],
 		},
 		{
-			title: 'رفع معدلات | جروب 100 | جروب 500',
-			url: '/tasks/رفع معدلات | جروب 100 | جروب 500',
-			frequency: 'شهرى',
+			title: 'رفع معدلات جروب 100 | جروب 500',
+		url: '/tasks/رفع معدلات جروب 100 | جروب 500',
+			frequency: 'يومى',
 			sapReports: ['ZCAT6 MODIFY'],
 			video: ['Yu5F3GCZ1cI', 'kEs_DKe1pBU', 'H_olxtd3tPQ'],
 		},
@@ -223,8 +223,7 @@ const { task } = Astro.params;
 const { url, frequency, reports, video } = Astro.props;
 ---
 
-<script>
-	import '../../scripts/protect-routes.js';
+<script src='../../scripts/protect-routes.js'>
 </script>
 <BaseLayout pageTitle={`قسم الطلبيات | ${task}`}>
 	<div
