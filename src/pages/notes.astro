@@ -2,14 +2,37 @@
 import Card from '../components/Card.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 const allNotes = await Astro.glob('../pages/posts/notes/*.md');
+const tags = {}
+const filteredNotes = []
+const sortedAllNotes = allNotes.sort((a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate))
+for (let i = 0; i < sortedAllNotes.length; i++) {
+	if (sortedAllNotes[i].frontmatter.tags.includes('جدول إيميل')){
+		if (!tags['جدول إيميل']) {
+			tags['جدول إيميل'] = 1;
+			filteredNotes.push(sortedAllNotes[i])
+		} else {
+			continue
+		}
+	} else if (sortedAllNotes[i].frontmatter.tags.includes('جدول الطلبيات')){
+		if (!tags['جدول الطلبيات']) {
+			tags['جدول الطلبيات'] = 1;
+			filteredNotes.push(sortedAllNotes[i])
+		} else {
+			continue
+		}
+	} else {
+		filteredNotes.push(sortedAllNotes[i])
 
+	}
+}
 
 
 ---
-<script>
-	import '../scripts/protect-routes.js'
+<script src="../scripts/protect-routes.js">
 </script>
+
 <BaseLayout pageTitle='قسم الطلبيات | ملاحظات'>
+	
 	<div
 		class='page-title arab-txt mr-4 pr-2 lg:mr-0 flex justify-end items-center border-right border-r-4 border-gray-600'
 	>
@@ -20,9 +43,10 @@ const allNotes = await Astro.glob('../pages/posts/notes/*.md');
 			أهم الملاحظات
 		</h1>
 	</div>
-	<main class='lg:flex-row-reverse  lg:justify-center flex-col justify-start lg:items-start items-center gap-6 pt-16 flex-wrap'>
+	
+	<main class='lg:flex-row-reverse flex-col justify-start lg:items-start items-center gap-6 pt-16 flex-wrap'>
 		{
-			allNotes.sort((a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)).map(note => (
+			filteredNotes.map(note => (
 				<Card
 					title={note.frontmatter.title}
 					url={note.url}
@@ -30,6 +54,7 @@ const allNotes = await Astro.glob('../pages/posts/notes/*.md');
 					thumbnail={note.frontmatter.image}
 					author={note.frontmatter.author}
 					tags={note.frontmatter.tags}
+					recent={new Date() - new Date(note.frontmatter.pubDate) < 259200001 }
 				/>
 			))
 		}
