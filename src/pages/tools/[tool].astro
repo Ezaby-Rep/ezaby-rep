@@ -1,0 +1,42 @@
+---
+import Main from '../../components/Main.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+export async function getStaticPaths() {
+	const tools = [
+  {
+    title: "الكويرى الخاص بجروب 100",
+    url: "/tools/الكويرى الخاص بجروب 100",
+		toolsURL: ["https://drive.google.com/drive/folders/14Go-J5Q8BXe26Ycd1tI3UY2UXHRJXGuF?usp=sharing"]
+  },
+]
+
+	return tools.map(oneTool => {
+		const tool = oneTool.title;
+		return {
+			params: { tool },
+			props: {
+				url: oneTool.url,
+			},
+		};
+	});
+}
+
+const { tool } = Astro.params;
+const { url, frequency, reports, video } = Astro.props;
+---
+
+<script src='../../scripts/protect-routes.js'>
+</script>
+<BaseLayout pageTitle={`قسم الطلبيات | ${tool}`}>
+	<div
+		class='page-title arab-txt mr-4 pr-2 lg:mr-0 flex justify-end items-center border-right border-r-4 border-gray-600 lg:border-0'
+	>
+		<h1
+			class='text-xl md:text-2xl lg:text-3xl font-bold lg:font-semibold text-gray-900'
+			dir='rtl'
+		>
+			{tool}
+		</h1>
+	</div>
+
+</BaseLayout>

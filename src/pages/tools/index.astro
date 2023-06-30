@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TaskLink from '../../components/TaskLink.astro';
+const tools = [
+  {
+    title: "الكويرى الخاص بجروب 100",
+    url: "/tools/الكويرى الخاص بجروب 100"
+  },
+]
+---
+<script src="../../scripts/protect-routes.js">
+</script>
+<BaseLayout pageTitle="قسم الطلبيات | الأدوات">
+	<div
+		class='page-title arab-txt mr-4 pr-2 lg:mr-0 flex justify-end items-center border-right border-r-4 border-gray-600'
+	>
+		<h1
+			class='text-xl md:text-2xl lg:text-3xl font-bold lg:font-semibold text-gray-900'
+			dir='rtl'
+		>
+			الأدوات
+		</h1>
+	</div>
+	<main class="  items-center md:pl-20 pl-0 mt-4">
+		<ul class="flex flex-wrap gap-10 items-center mt-4 mr-4 justify-center">
+			{tools.map((task) => <TaskLink title={task.title} url={task.url}   />)}
+		</ul>
+	</main>
+</BaseLayout>

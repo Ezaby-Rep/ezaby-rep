@@ -1,7 +1,7 @@
 ---
-import Card from '../components/Card.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
-const allNotes = await Astro.glob('../pages/posts/notes/*.md');
+import Card from '../../../components/Card.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const allNotes = await Astro.glob('./*.md');
 const tags = {}
 const filteredNotes = []
 const sortedAllNotes = allNotes.sort((a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate))
@@ -28,7 +28,7 @@ for (let i = 0; i < sortedAllNotes.length; i++) {
 
 
 ---
-<script src="../scripts/protect-routes.js">
+<script src="../../../scripts/protect-routes.js">
 </script>
 
 <BaseLayout pageTitle='قسم الطلبيات | ملاحظات'>
