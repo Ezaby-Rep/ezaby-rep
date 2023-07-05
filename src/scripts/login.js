@@ -16,7 +16,7 @@ passInput.addEventListener('input', (e) => {
       exp: now + 2592000000 //1 month
     }
     localStorage.setItem("loginStatus", JSON.stringify(mrpLogin));
-    setTimeout(() => window.location.replace('posts/notes'), 2000)
+    setTimeout(() => window.location.replace('https://mrp-rep.netlify.app/posts/notes'), 2000)
   } else {
     invalidPass.style.visibility = 'visible';
   }
