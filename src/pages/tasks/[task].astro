@@ -236,6 +236,45 @@ export async function getStaticPaths() {
 			],
 			video: ['e97ysHbaNbY'],
 		},
+                {
+			title: 'فرش الترانزيت للفروع الجديدة',
+			url: '/tasks/فرش الترانزيت للفروع الجديدة',
+			frequency: 'حسب الطلب',
+			sapReports: [
+				'ZSTOCK_HANA',
+				'ZSTO5_FM',
+				'ZOVR_FM',
+				'Z_ALLOC',
+			],
+			video: ['bJ-uixDYCzc'],
+		},
+                {
+			title: 'طلبيات الفروع الجديدة',
+			url: '/tasks/طلبيات الفروع الجديدة',
+			frequency: 'يومي',
+			sapReports: ['ZSTO5'],
+			video: ['R0HMS_SWepA'],
+		},
+                {
+			title: 'Zsite3',
+			url: '/tasks/Zsite3',
+			frequency: 'يومي',
+			sapReports: [
+				'ZSITE3',
+				'MCGD',
+			],
+			video: ['EPdPDgNvTZg'],
+		},
+                {
+			title: 'Storage location',
+			url: '/tasks/Storage location',
+			frequency: 'يومي',
+			sapReports: [
+				'MB52',
+				'ZPRG',
+			],
+			video: ['NxeKOzfAJUY'],
+		},
 	];
 
 	return tasks.map(oneTask => {
